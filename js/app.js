@@ -34,10 +34,11 @@ function smoothScroll(element, duration) {
   function animation(currentTime) {
     if (startTime === null) startTime = currentTime;
     let timeElapsed = currentTime - startTime;
-    var run = ease(timeElapsed, startPosition, distance, duration);
+    var run = ease(timeElapsed, startPosition, targetPosition, duration);
     window.scrollTo(0, run);
     if (timeElapsed < duration) requestAnimationFrame(animation);
   }
+
   function ease(t, b, c, d) {
     t /= d / 2;
     if (t < 1) return (c / 2) * t * t + b;
@@ -47,10 +48,29 @@ function smoothScroll(element, duration) {
 
   requestAnimationFrame(animation);
 }
-
+let navLink1 = document.querySelector(".navLink1");
+navLink1.addEventListener("click", () => {
+  smoothScroll(".home", 1000);
+});
+let navLink2 = document.querySelector(".navLink2");
+navLink2.addEventListener("click", () => {
+  smoothScroll(".about", 1000);
+});
+let navLink3 = document.querySelector(".navLink3");
+navLink3.addEventListener("click", () => {
+  smoothScroll(".services", 1000);
+});
 let navLink4 = document.querySelector(".navLink4");
 navLink4.addEventListener("click", () => {
   smoothScroll(".clients", 1000);
+});
+let navLink5 = document.querySelector(".navLink5");
+navLink5.addEventListener("click", () => {
+  smoothScroll(".portfolio", 1000);
+});
+let navLink6 = document.querySelector(".navLink6");
+navLink6.addEventListener("click", () => {
+  smoothScroll(".contact", 1000);
 });
 
 // ********************* NOTE Languages dropdown ***********************
