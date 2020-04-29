@@ -47,7 +47,6 @@ function smoothScroll(element, duration) {
 
   requestAnimationFrame(animation);
 }
-smoothScroll(".clients", 1000);
 
 let navLink4 = document.querySelector(".navLink4");
 navLink4.addEventListener("click", () => {
