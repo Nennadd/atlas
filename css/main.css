@@ -4,8 +4,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  /* font-size: calc(11px + (21 - 13) * ((100vw - 320px) / (1600 - 320))); */
+  /* font-size: 16px; */
+  font-size: calc(11px + (21 - 13) * ((100vw - 320px) / (1600 - 320)));
 }
 
 /* NOTE HOME */
@@ -635,6 +635,31 @@ nav {
 
 @media screen and (min-width: 1400px) {
   .about-text p {
-    margin: 2.8rem 3rem 0.8rem 0.4rem;
+    margin: 2.8rem 3.5rem 0.8rem 0.4rem;
+  }
+  .about-text h3 {
+    margin: 90px 0 10px;
+  }
+  .apply-form {
+    margin-top: 6rem;
+  }
+  .services {
+    padding: 3rem 0 4rem;
+  }
+  .services h2 {
+    margin: 1.5rem 0 3rem;
+  }
+  .services-items {
+    row-gap: 4rem;
+    margin: 50px auto;
+  }
+  .services-item img {
+    max-width: 150px;
+  }
+  .clients {
+    padding: 3rem 1rem;
+  }
+  .contact-form {
+    padding: 0 1rem;
   }
 }
