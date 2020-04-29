@@ -185,11 +185,11 @@ nav {
   margin: 20px 0 30px;
 }
 .about-text h3 {
-  margin: 50px 0 10px;
+  margin: 2rem 0 10px;
 }
 .about-text p {
   color: #555;
-  margin: 0.8rem 3rem 0.8rem 0.4rem;
+  margin: 0.9rem 3rem 0.8rem 0.4rem;
 }
 .about-text button {
   display: block;
@@ -603,6 +603,10 @@ nav {
   display: inline-block;
   width: 30px;
   margin: 5px 8px 0;
+  transition: transform 0.5s ease;
+}
+.social .social-icons:hover {
+  transform: scale(1.2);
 }
 .contact-info {
   display: flex;

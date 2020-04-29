@@ -13,7 +13,7 @@ function changeNavbar() {
     logo.style.width = "100px";
   }
 
-  if (height > 1700) {
+  if (height > 1750) {
     const cards = document.querySelectorAll(".card");
     cards[0].classList.add("card1");
     cards[1].classList.add("card2");
@@ -22,6 +22,38 @@ function changeNavbar() {
 }
 changeNavbar();
 window.addEventListener("scroll", changeNavbar);
+
+// ********************* NOTE smooth scrolling ************************
+function smoothScroll(element, duration) {
+  let target = document.querySelector(element);
+  let targetPosition = target.getBoundingClientRect().top;
+  let startPosition = window.pageYOffset;
+  let distance = targetPosition - startPosition;
+  let startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    let timeElapsed = currentTime - startTime;
+    var run = ease(timeElapsed, startPosition, distance, duration);
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) requestAnimationFrame(animation);
+  }
+  function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animation);
+}
+smoothScroll(".clients", 1000);
+
+let navLink4 = document.querySelector(".navLink4");
+navLink4.addEventListener("click", () => {
+  smoothScroll(".clients", 1000);
+});
+
 // ********************* NOTE Languages dropdown ***********************
 let languages = document.querySelector(".language");
 let arrow = document.querySelector(".language-arrow");
@@ -37,23 +69,10 @@ function languagesDropdown() {
     arrow.style.rotate = "-540deg";
   }
 }
-// NOTE Languages dropdown on mouseenter
-// languages.addEventListener("mouseenter", function () {
-//   langDiv = document.querySelector(".languages");
-
-//   langDiv.classList.add("languages-show");
-//   arrow.style.rotate = "-540deg";
-// });
-// NOTE Languages dropdown on mouseleave
-// languages.addEventListener("mouseleave", function () {
-//   langDiv = document.querySelector(".languages");
-
-//   langDiv.classList.remove("languages-show");
-//   arrow.style.rotate = "0deg";
-// });
 const removeDropdown = document
   .querySelector("body")
   .removeEventListener("click", languagesDropdown);
+
 // *********************** NOTE APPLY FORM MODAL *************************
 const applyBtn = document.querySelector(".apply-btn");
 applyBtn.addEventListener("click", formModal);
