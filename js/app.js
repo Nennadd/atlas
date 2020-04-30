@@ -6,8 +6,8 @@ function changeNavbar() {
 
   if (height > 250) {
     navbar.classList = "nav";
-    logo.style.width = "60px";
-    logo.style.margin = "0";
+    logo.style.width = "50px";
+    logo.style.margin = "0 0 0 20px";
   } else {
     navbar.classList.remove("nav");
     logo.style.width = "100px";
