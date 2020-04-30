@@ -24,11 +24,11 @@ changeNavbar();
 window.addEventListener("scroll", changeNavbar);
 
 // ********************* NOTE smooth scrolling ************************
-function smoothScroll(element, duration) {
+function smoothScroll(link, element, duration) {
   let target = document.querySelector(element);
   let targetPosition = target.getBoundingClientRect().top;
   let startPosition = window.pageYOffset;
-  let distance = targetPosition - startPosition;
+  // let distance = targetPosition - startPosition;
   let startTime = null;
 
   function animation(currentTime) {
@@ -45,32 +45,31 @@ function smoothScroll(element, duration) {
     t--;
     return (-c / 2) * (t * (t - 2) - 1) + b;
   }
-
   requestAnimationFrame(animation);
 }
 let navLink1 = document.querySelector(".navLink1");
-navLink1.addEventListener("click", () => {
-  smoothScroll(".home", 1000);
+navLink1.addEventListener("click", function () {
+  smoothScroll(this, ".home", 1000);
 });
 let navLink2 = document.querySelector(".navLink2");
-navLink2.addEventListener("click", () => {
-  smoothScroll(".about", 1000);
+navLink2.addEventListener("click", function () {
+  smoothScroll(this, ".about", 1000);
 });
 let navLink3 = document.querySelector(".navLink3");
-navLink3.addEventListener("click", () => {
-  smoothScroll(".services", 1000);
+navLink3.addEventListener("click", function () {
+  smoothScroll(this, ".services", 1000);
 });
 let navLink4 = document.querySelector(".navLink4");
-navLink4.addEventListener("click", () => {
-  smoothScroll(".clients", 1000);
+navLink4.addEventListener("click", function () {
+  smoothScroll(this, ".clients", 1000);
 });
 let navLink5 = document.querySelector(".navLink5");
-navLink5.addEventListener("click", () => {
-  smoothScroll(".portfolio", 1000);
+navLink5.addEventListener("click", function () {
+  smoothScroll(this, ".portfolio", 1000);
 });
 let navLink6 = document.querySelector(".navLink6");
-navLink6.addEventListener("click", () => {
-  smoothScroll(".contact", 1000);
+navLink6.addEventListener("click", function () {
+  smoothScroll(this, ".contact", 1000);
 });
 
 // ********************* NOTE Languages dropdown ***********************
@@ -154,7 +153,7 @@ submitBtn.addEventListener("click", function (e) {
 
   showMessage.textContent = "Message sent !";
   showMessage.style.color = "green";
-  let clearMessage = setTimeout(() => {
+  setTimeout(() => {
     showMessage.innerHTML = "";
   }, 3000);
   name.value = "";
