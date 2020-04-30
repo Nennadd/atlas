@@ -23,11 +23,15 @@ body {
 }
 .logo {
   display: inline-block;
+  transition: transform 0.5s ease;
 }
 .logo img {
   width: 100px;
   height: auto;
   transition: all 0.6s ease;
+}
+.logo:hover {
+  transform: scale(1.1);
 }
 nav {
   display: flex;
@@ -140,7 +144,7 @@ nav {
   letter-spacing: 3px;
   word-spacing: 10px;
   background: rgba(0, 0, 0, 0.4);
-  border-left: 2px solid #fff;
+  /* border-left: 2px solid #fff; */
 }
 .home-text h1 {
   font-weight: 400;
