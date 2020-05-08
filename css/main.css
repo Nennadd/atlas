@@ -346,14 +346,14 @@ nav {
   margin: 30px auto;
   text-align: center;
 }
-.glide__slide {
+.glide__slide1 {
   background: rgba(0, 0, 0, 0.1);
   padding: 2rem;
 }
 
 /* NOTE PORTFOLIO */
 .portfolio {
-  padding: 2rem 0;
+  padding: 2rem;
 }
 .portfolio h2 {
   text-align: center;
@@ -361,7 +361,7 @@ nav {
   text-transform: uppercase;
   font-weight: 700;
 }
-.portfolio-cards {
+/* .portfolio-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(180px, 1fr));
   column-gap: 2rem;
@@ -480,9 +480,9 @@ nav {
   height: 80%;
   grid-template-columns: 330px 90px;
   /* grid-template-rows: 1fr 1fr; */
-  column-gap: 5px;
+/*  column-gap: 5px;
   margin: 3rem auto;
-  z-index: 1004;
+  z-index: 1004; 
 }
 .gallery-images {
   display: grid;
@@ -495,6 +495,15 @@ nav {
   color: #fff;
   text-align: center;
   font-weight: 700;
+} */
+
+/* *************************************************** */
+.portfolio-carousel {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  /* background: rgba(0, 0, 0, 0.3); */
+  text-align: center;
 }
 
 /* NOTE CONTACT */

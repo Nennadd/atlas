@@ -13,12 +13,12 @@ function changeNavbar() {
     logo.style.width = "100px";
   }
 
-  if (height > 1750) {
-    const cards = document.querySelectorAll(".card");
-    cards[0].classList.add("card1");
-    cards[1].classList.add("card2");
-    cards[2].classList.add("card3");
-  }
+  // if (height > 1750) {
+  //   const cards = document.querySelectorAll(".card");
+  //   cards[0].classList.add("card1");
+  //   cards[1].classList.add("card2");
+  //   cards[2].classList.add("card3");
+  // }
 }
 changeNavbar();
 window.addEventListener("scroll", changeNavbar);
@@ -126,10 +126,16 @@ submitBtn.addEventListener("click", function (e) {
   name.className = "";
   phone.className = "";
   email.className = "";
+  experience.className = "";
+  position.className = "";
+  message.className = "";
 
   validateName(name.value);
   validatePhone(phone.value);
   validateEmail(email.value);
+  validateExperience(experience.value);
+  validatePosition(position.value);
+  validateMessage(message.value);
 
   // Show first error.
   if (allErrors.length > 0) {
@@ -188,6 +194,30 @@ function validateEmail(email) {
     return;
   }
 }
+function validateExperience(experience) {
+  if (experience.length < 1) {
+    allErrors.push("*Experience cannot be empty!");
+    showMessage.style.color = "red";
+    document.querySelector("#experience").className = "border-error";
+    return;
+  }
+}
+function validatePosition(position) {
+  if (position.length < 1) {
+    allErrors.push("*Position cannot be empty!");
+    showMessage.style.color = "red";
+    document.querySelector("#position").className = "border-error";
+    return;
+  }
+}
+function validateMessage(message) {
+  if (message.length < 1) {
+    allErrors.push("*Message cannot be empty!");
+    showMessage.style.color = "red";
+    document.querySelector("#message").className = "border-error";
+    return;
+  }
+}
 //  ***************** NOTE Slider for OUR CLIENTS section ***********
 var glide = new Glide(".glide", {
   type: "carousel",
@@ -200,33 +230,43 @@ var glide = new Glide(".glide", {
 glide.mount();
 
 // ***************** NOTE PRODUCT GALLERY **********************
-const portfolioModal = document.querySelector(".portfolio-modal");
-const portfolioCards = document.querySelectorAll(".card");
-const gallery = document.querySelector(".gallery");
-portfolioCards.forEach((card) => {
-  card.addEventListener("click", function () {
-    portfolioModal.style.display = "block";
-    navbar.style.display = "none";
-    gallery.style.display = "grid";
+// const portfolioModal = document.querySelector(".portfolio-modal");
+// const portfolioCards = document.querySelectorAll(".card");
+// const gallery = document.querySelector(".gallery");
+// portfolioCards.forEach((card) => {
+//   card.addEventListener("click", function () {
+//     portfolioModal.style.display = "block";
+//     navbar.style.display = "none";
+//     gallery.style.display = "grid";
 
-    // let current = document.querySelector(".current");
-    // let img = current.children[0];
-    // img.setAttribute(
-    //   "src",
-    //   "images/products/portfolio/Skirt_Caroll_Quitterie/KB05105F-02-jupe-femme-gris-moyen-quitterie.jpg"
-    // );
-  });
-});
+// let current = document.querySelector(".current");
+// let img = current.children[0];
+// img.setAttribute(
+//   "src",
+//   "images/products/portfolio/Skirt_Caroll_Quitterie/KB05105F-02-jupe-femme-gris-moyen-quitterie.jpg"
+// );
+//   });
+// });
 
 // CLOSE MODAL
-portfolioModal.addEventListener("click", function () {
-  this.style.display = "none";
-  navbar.style.display = "flex";
+// portfolioModal.addEventListener("click", function () {
+//   this.style.display = "none";
+//   navbar.style.display = "flex";
+// });
+// // STOP PROPAGATION
+// gallery.addEventListener("click", function (e) {
+//   e.stopPropagation();
+// });
+
+var portfolio = new Glide(".portfolio-glide", {
+  type: "slider",
+  startAt: 0,
+  perView: 3,
+  autoplay: false,
+  hoverpause: false,
+  gap: 2,
 });
-// STOP PROPAGATION
-gallery.addEventListener("click", function (e) {
-  e.stopPropagation();
-});
+portfolio.mount();
 
 // ***************** NOTE CONTACT FORM **************************
 const button = document.querySelector(".submit-btn");
@@ -243,8 +283,16 @@ button.addEventListener("click", function (e) {
   const country = document.querySelector("#contact-country");
   const message = document.querySelector("#contact-message");
   name.className = "";
+  company.className = "";
+  email.className = "";
+  country.className = "";
+  message.className = "";
 
   validateContactName(name.value);
+  validateCompanyName(company.value);
+  validateEmail(email.value);
+  validateCountry(country.value);
+  validateMessage(message.value);
 
   // Show first error.
   if (contactErrors.length > 0) {
@@ -262,12 +310,48 @@ button.addEventListener("click", function (e) {
     contactMessage.innerHTML = "";
   }, 2500);
   name.value = "";
+  company.value = "";
+  email.value = "";
+  country.value = "";
+  message.value = "";
 
   function validateContactName(name) {
     if (name.length < 1) {
       contactErrors.push("*Name cannot be empty!");
       contactMessage.style.color = "red";
       document.querySelector("#contact-name").className = "border-error";
+      return;
+    }
+  }
+  function validateCompanyName(company) {
+    if (company.length < 1) {
+      contactErrors.push("*Company name cannot be empty!");
+      contactMessage.style.color = "red";
+      document.querySelector("#contact-company").className = "border-error";
+      return;
+    }
+  }
+  function validateEmail(email) {
+    if (email.length < 1) {
+      contactErrors.push("*Email cannot be empty!");
+      contactMessage.style.color = "red";
+      document.querySelector("#contact-email").className = "border-error";
+      return;
+    }
+  }
+  function validateCountry(country) {
+    if (country.length < 1) {
+      contactErrors.push("*Country cannot be empty!");
+      contactMessage.style.color = "red";
+      document.querySelector("#contact-country").className = "border-error";
+      return;
+    }
+  }
+  function validateMessage(message) {
+    if (message.length < 1) {
+      contactErrors.push("*Message cannot be empty!");
+      contactMessage.style.color = "red";
+      document.querySelector("#contact-message").className = "border-error";
       return;
     }
   }
