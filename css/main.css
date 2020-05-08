@@ -641,7 +641,7 @@ nav {
   padding-left: 7px;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1600px) {
   .about-text p {
     margin: 2.8rem 3.5rem 0.8rem 0.4rem;
   }
