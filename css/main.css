@@ -367,7 +367,7 @@ nav {
   column-gap: 2rem;
   width: 67%;
   margin: 40px auto 0;
-}
+} */
 .card {
   overflow: hidden;
   opacity: 0;
@@ -415,7 +415,7 @@ nav {
     opacity: 1;
   }
 }
-.card-image {
+/* .card-image {
   display: grid;
   max-width: 100%;
   overflow: hidden;

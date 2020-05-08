@@ -13,12 +13,15 @@ function changeNavbar() {
     logo.style.width = "100px";
   }
 
-  // if (height > 1750) {
-  //   const cards = document.querySelectorAll(".card");
-  //   cards[0].classList.add("card1");
-  //   cards[1].classList.add("card2");
-  //   cards[2].classList.add("card3");
-  // }
+  if (height > 1750) {
+    let slide1 = document.querySelector(".slide1");
+    let slide2 = document.querySelector(".slide2");
+    let slide3 = document.querySelector(".slide3");
+    // const cards = document.querySelectorAll(".card");
+    slide1.classList.add("card1");
+    slide2.classList.add("card2");
+    slide3.classList.add("card3");
+  }
 }
 changeNavbar();
 window.addEventListener("scroll", changeNavbar);
