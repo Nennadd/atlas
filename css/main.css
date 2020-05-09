@@ -692,3 +692,12 @@ nav {
     padding: 0 1rem;
   }
 }
+
+@media screen and (max-width: 860px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
