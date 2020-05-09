@@ -287,7 +287,7 @@ function portfolioSlider() {
     perView: slidesPerView,
     autoplay: false,
     hoverpause: false,
-    gap: 5,
+    gap: 20,
   });
   portfolio.mount();
 }
@@ -306,6 +306,9 @@ function renderGallery(image) {
     if (image === product.images[0]) {
       let gallery = document.createElement("div");
       gallery.className = "gallery";
+      gallery.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
 
       let current = document.createElement("div");
       let currentImg = document.createElement("img");
@@ -319,7 +322,11 @@ function renderGallery(image) {
 
       let thumbnails = document.createElement("div");
       for (let i = 0; i < product.images.length; i++) {
-        thumbnails.innerHTML += `<div><img src="${product.images[i]}" alt="${product.description}" width="64"></div>`;
+        thumbnails.innerHTML += `<div><img src="${product.images[i]}" alt="${product.description}" width="67.9"></div>`;
+        // product.images[i].addEventListener("click", () => {
+        //   currentImg.setAttribute("src", product.images[i]);
+        //   currentImg.setAttribute("alt", product.description);
+        // });
       }
       gallery.appendChild(current);
       gallery.appendChild(thumbnails);
