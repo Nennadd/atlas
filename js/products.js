@@ -25,7 +25,7 @@ const products = [
       "images/products/portfolio/Skirt_Pablo_Sabrina/phj28h5931401-e.jpg",
       "images/products/portfolio/Skirt_Pablo_Sabrina/phj28h5931401-5_002.jpg",
       "images/products/portfolio/Skirt_Pablo_Sabrina/phj28h5931401-f.jpg",
-      "iimages/products/portfolio/Skirt_Pablo_Sabrina/phj28h5931401-g_002.jpg",
+      "images/products/portfolio/Skirt_Pablo_Sabrina/phj28h5931401-g_002.jpg",
       "images/products/portfolio/Skirt_Pablo_Sabrina/phj28h5931401-1_003.jpg",
     ],
   },

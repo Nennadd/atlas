@@ -272,7 +272,7 @@ clientsSlider();
 // gallery.addEventListener("click", function (e) {
 //   e.stopPropagation();
 // });
-console.log(innerWidth);
+
 function portfolioSlider() {
   let slidesPerView;
 
@@ -297,17 +297,39 @@ window.addEventListener("resize", () => {
   // clientsSlider();
 });
 
-// function renderGallery(image) {
-//   for (product of products) {
-//     if (image === product.images[0]) {
-//       console.log(product.images[2]);
-//       console.log(image);
-//     }
-//   }
-// }
-// console.log(products);
 const portfolioModal = document.querySelector(".portfolio-modal");
 const portfolioCards = document.querySelectorAll(".card");
+
+function renderGallery(image) {
+  portfolioModal.innerHTML = "";
+  for (product of products) {
+    if (image === product.images[0]) {
+      let gallery = document.createElement("div");
+      gallery.className = "gallery";
+
+      let current = document.createElement("div");
+      let currentImg = document.createElement("img");
+      currentImg.setAttribute("src", product.images[0]);
+      currentImg.setAttribute("alt", product.description);
+
+      let description = document.createElement("p");
+      description.textContent = product.description;
+      current.appendChild(currentImg);
+      // current.appendChild(description);
+
+      let thumbnails = document.createElement("div");
+      for (let i = 0; i < product.images.length; i++) {
+        thumbnails.innerHTML += `<div><img src="${product.images[i]}" alt="${product.description}" width="64"></div>`;
+      }
+      gallery.appendChild(current);
+      gallery.appendChild(thumbnails);
+      portfolioModal.appendChild(description);
+      portfolioModal.appendChild(gallery);
+      // console.log(product.images[2]);
+      // console.log(image);
+    }
+  }
+}
 // const gallery = document.querySelector(".gallery");
 portfolioCards.forEach((card) => {
   card.addEventListener("click", function (e) {
