@@ -104,12 +104,12 @@ applyBtn.addEventListener("click", formModal);
 
 function formModal() {
   modal.classList = "apply-modal";
-  navbar.style.display = "none";
+  // navbar.style.display = "none";
 }
 const modal = document.querySelector(".apply");
 modal.addEventListener("click", function () {
   modal.className = "apply";
-  navbar.style.display = "flex";
+  // navbar.style.display = "flex";
 });
 const modalForm = document.querySelector(".apply-form");
 modalForm.addEventListener("click", function (e) {
@@ -342,7 +342,7 @@ portfolioCards.forEach((card) => {
   card.addEventListener("click", function (e) {
     const imgSrc = e.target.getAttribute("src");
     portfolioModal.style.display = "block";
-    navbar.style.display = "none";
+    // navbar.style.display = "none";
     renderGallery(imgSrc);
   });
 });
@@ -350,7 +350,7 @@ portfolioCards.forEach((card) => {
 // CLOSE MODAL
 portfolioModal.addEventListener("click", function () {
   this.style.display = "none";
-  navbar.style.display = "flex";
+  // navbar.style.display = "flex";
 });
 // ***************** NOTE CONTACT FORM **************************
 const button = document.querySelector(".submit-btn");
