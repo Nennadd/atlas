@@ -352,6 +352,12 @@ nav {
   background: rgba(0, 0, 0, 0.1);
   padding: 2rem;
 }
+.clients-arrow-left {
+  left: -70px !important;
+}
+.clients-arrow-right {
+  right: -70px !important;
+}
 
 /* NOTE PORTFOLIO */
 .portfolio {
@@ -729,6 +735,12 @@ nav {
   }
   .apply-form {
     width: 70%;
+  }
+  .clients-arrow-left {
+    left: -20px !important;
+  }
+  .clients-arrow-right {
+    right: -20px !important;
   }
   .footer {
     display: flex;
