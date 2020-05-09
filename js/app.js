@@ -272,12 +272,13 @@ clientsSlider();
 // gallery.addEventListener("click", function (e) {
 //   e.stopPropagation();
 // });
-
+console.log(innerWidth);
 function portfolioSlider() {
   let slidesPerView;
 
-  if (window.innerWidth < 860) slidesPerView = 1;
-  if (window.innerWidth > 861 && window.innerWidth < 1199) slidesPerView = 2;
+  if (window.innerWidth < 499) slidesPerView = 1;
+  // if (window.innerWidth > 861 && window.innerWidth < 1199) slidesPerView = 2;
+  if (window.innerWidth > 500 && window.innerWidth < 900) slidesPerView = 2;
   if (window.innerWidth > 1200) slidesPerView = 3;
 
   var portfolio = new Glide(".portfolio-glide", {
@@ -286,7 +287,7 @@ function portfolioSlider() {
     perView: slidesPerView,
     autoplay: false,
     hoverpause: false,
-    gap: 1,
+    gap: 5,
   });
   portfolio.mount();
 }
