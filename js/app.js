@@ -278,8 +278,8 @@ function portfolioSlider() {
 
   if (window.innerWidth < 499) slidesPerView = 1;
   // if (window.innerWidth > 861 && window.innerWidth < 1199) slidesPerView = 2;
-  if (window.innerWidth > 500 && window.innerWidth < 900) slidesPerView = 2;
-  if (window.innerWidth > 1200) slidesPerView = 3;
+  if (window.innerWidth > 500 && window.innerWidth < 899) slidesPerView = 2;
+  if (window.innerWidth > 900) slidesPerView = 3;
 
   var portfolio = new Glide(".portfolio-glide", {
     type: "slider",
