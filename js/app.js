@@ -1,5 +1,6 @@
 // NOTE NAVBAR CHANGE ON SCROLL
 let navbar = document.querySelector("nav");
+
 function changeNavbar() {
   let height = scrollY;
   let logo = document.querySelector(".logo-img");
@@ -225,16 +226,24 @@ function validateMessage(message) {
   }
 }
 //  ***************** NOTE Slider for OUR CLIENTS section ***********
-var glide = new Glide(".glide", {
-  type: "carousel",
-  startAt: 0,
-  perView: 3,
-  autoplay: 2300,
-  hoverpause: false,
-  gap: 5,
-});
-glide.mount();
+function clientsSlider() {
+  let slidePerView;
 
+  if (window.innerWidth < 860) slidePerView = 1;
+  if (window.innerWidth > 861 && window.innerWidth < 1199) slidePerView = 2;
+  if (window.innerWidth > 1200) slidePerView = 3;
+
+  var glide = new Glide(".glide", {
+    type: "carousel",
+    startAt: 0,
+    perView: slidePerView,
+    autoplay: 2300,
+    hoverpause: false,
+    gap: 5,
+  });
+  glide.mount();
+}
+clientsSlider();
 // ***************** NOTE PRODUCT GALLERY **********************
 // const portfolioModal = document.querySelector(".portfolio-modal");
 // const portfolioCards = document.querySelectorAll(".card");
@@ -263,25 +272,38 @@ glide.mount();
 // gallery.addEventListener("click", function (e) {
 //   e.stopPropagation();
 // });
-let slidesPerView = 3;
-var portfolio = new Glide(".portfolio-glide", {
-  type: "slider",
-  startAt: 0,
-  perView: slidesPerView,
-  autoplay: false,
-  hoverpause: false,
-  gap: 1,
-});
-portfolio.mount();
 
-function renderGallery(image) {
-  for (product of products) {
-    if (image === product.images[0]) {
-      console.log(product.images[2]);
-      console.log(image);
-    }
-  }
+function portfolioSlider() {
+  let slidesPerView;
+
+  if (window.innerWidth < 860) slidesPerView = 1;
+  if (window.innerWidth > 861 && window.innerWidth < 1199) slidesPerView = 2;
+  if (window.innerWidth > 1200) slidesPerView = 3;
+
+  var portfolio = new Glide(".portfolio-glide", {
+    type: "slider",
+    startAt: 0,
+    perView: slidesPerView,
+    autoplay: false,
+    hoverpause: false,
+    gap: 1,
+  });
+  portfolio.mount();
 }
+portfolioSlider();
+window.addEventListener("resize", () => {
+  portfolioSlider();
+  // clientsSlider();
+});
+
+// function renderGallery(image) {
+//   for (product of products) {
+//     if (image === product.images[0]) {
+//       console.log(product.images[2]);
+//       console.log(image);
+//     }
+//   }
+// }
 // console.log(products);
 const portfolioModal = document.querySelector(".portfolio-modal");
 const portfolioCards = document.querySelectorAll(".card");
