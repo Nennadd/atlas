@@ -20,7 +20,7 @@ const products = [
     ],
   },
   {
-    description: "Skirt Caroll Vero",
+    description: "Skirt Pablo Sabrina",
     images: [
       "images/products/portfolio/Skirt_Pablo_Sabrina/phj28h5931401-e.jpg",
       "images/products/portfolio/Skirt_Pablo_Sabrina/phj28h5931401-5_002.jpg",

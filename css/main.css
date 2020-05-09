@@ -177,7 +177,7 @@ nav {
   transform: scale(1.04);
 }
 .about-text {
-  padding: 1rem 2rem 0 1rem;
+  padding: 1rem 2rem 0.5rem 1rem;
 }
 .about-text h2,
 .about-text h3 {
@@ -528,7 +528,6 @@ nav {
 .card {
   /* width: 330px !important; */
   overflow: hidden;
-  border: 1px solid #666;
 }
 .card img {
   max-width: 100%;
@@ -741,6 +740,12 @@ nav {
   }
   .clients-arrow-right {
     right: -20px !important;
+  }
+  .portfolio-arrow-left {
+    left: -35px !important;
+  }
+  .portfolio-arrow-right {
+    right: -35px !important;
   }
   .footer {
     display: flex;
