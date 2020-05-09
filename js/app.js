@@ -17,10 +17,13 @@ function changeNavbar() {
     let slide1 = document.querySelector(".slide1");
     let slide2 = document.querySelector(".slide2");
     let slide3 = document.querySelector(".slide3");
-    // const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".card");
     slide1.classList.add("card1");
     slide2.classList.add("card2");
     slide3.classList.add("card3");
+    cards.forEach((card) => {
+      card.style.opacity = 1;
+    });
   }
 }
 changeNavbar();
@@ -135,7 +138,7 @@ submitBtn.addEventListener("click", function (e) {
 
   validateName(name.value);
   validatePhone(phone.value);
-  validateEmail(email.value);
+  // validateEmail(email.value);
   validateExperience(experience.value);
   validatePosition(position.value);
   validateMessage(message.value);
@@ -144,7 +147,7 @@ submitBtn.addEventListener("click", function (e) {
   if (allErrors.length > 0) {
     let firstError = allErrors.shift();
     showMessage.innerHTML = firstError;
-    let clearMessage = setTimeout(() => {
+    setTimeout(() => {
       showMessage.innerHTML = "";
     }, 3000);
     return;
@@ -260,17 +263,43 @@ glide.mount();
 // gallery.addEventListener("click", function (e) {
 //   e.stopPropagation();
 // });
-
+let slidesPerView = 3;
 var portfolio = new Glide(".portfolio-glide", {
   type: "slider",
   startAt: 0,
-  perView: 3,
+  perView: slidesPerView,
   autoplay: false,
   hoverpause: false,
-  gap: 2,
+  gap: 1,
 });
 portfolio.mount();
 
+function renderGallery(image) {
+  for (product of products) {
+    if (image === product.images[0]) {
+      console.log(product.images[2]);
+      console.log(image);
+    }
+  }
+}
+// console.log(products);
+const portfolioModal = document.querySelector(".portfolio-modal");
+const portfolioCards = document.querySelectorAll(".card");
+// const gallery = document.querySelector(".gallery");
+portfolioCards.forEach((card) => {
+  card.addEventListener("click", function (e) {
+    const imgSrc = e.target.getAttribute("src");
+    portfolioModal.style.display = "block";
+    navbar.style.display = "none";
+    renderGallery(imgSrc);
+  });
+});
+
+// CLOSE MODAL
+portfolioModal.addEventListener("click", function () {
+  this.style.display = "none";
+  navbar.style.display = "flex";
+});
 // ***************** NOTE CONTACT FORM **************************
 const button = document.querySelector(".submit-btn");
 let contactMessage = document.querySelector(".contact-message");
