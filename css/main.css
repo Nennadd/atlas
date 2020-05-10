@@ -757,7 +757,7 @@ body {
   .menu-bg {
     width: 0;
     height: 0;
-    background: rgba(255, 255, 255, 0.97);
+    background: rgba(250, 250, 250, 0.98);
     transition: 0.7s ease;
     z-index: 1;
   }
