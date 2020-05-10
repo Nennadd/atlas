@@ -287,7 +287,7 @@ function portfolioSlider() {
     perView: slidesPerView,
     autoplay: false,
     hoverpause: false,
-    gap: 20,
+    gap: 10,
   });
   portfolio.mount();
 }
