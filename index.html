@@ -19,29 +19,38 @@
     <div class="container">
       <!-- NOTE HOME !!! -->
       <div class="home">
-        <nav>
-          <a class="logo" href="#">
-            <img class="logo-img" src="images/svg/logomark.svg" alt="logo" />
-          </a>
-          <ul class="navbar">
-            <li><a class="navLink1" href="#">Home</a></li>
-            <li><a class="navLink2" href="#">About Us</a></li>
-            <li><a class="navLink3" href="#">Our Services</a></li>
-            <li><a class="navLink4" href="#">Our Clients</a></li>
-            <li><a class="navLink5" href="#">Portfolio</a></li>
-            <li><a class="navLink6" href="#">Contact Us</a></li>
-            <li class="language">
-              Language <span class="language-arrow"></span>
-              <ul class="languages">
-                <li><a href="#">English</a></li>
-                <li><a href="#">French</a></li>
-                <li><a href="#">German</a></li>
-                <li><a href="#">Spanish</a></li>
-                <li><a href="#">Serbian</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+        <div id="menu-bar">
+          <nav>
+            <a class="logo brand" href="#">
+              <img class="logo-img" src="images/svg/logomark.svg" alt="logo" />
+            </a>
+
+            <div id="menu" onclick="onClickMenu()">
+              <div id="bar1" class="bar"></div>
+              <div id="bar2" class="bar"></div>
+              <div id="bar3" class="bar"></div>
+            </div>
+            <ul class="navbar" id="nav">
+              <li><a class="navLink1" href="#">Home</a></li>
+              <li><a class="navLink2" href="#">About Us</a></li>
+              <li><a class="navLink3" href="#">Our Services</a></li>
+              <li><a class="navLink4" href="#">Our Clients</a></li>
+              <li><a class="navLink5" href="#">Portfolio</a></li>
+              <li><a class="navLink6" href="#">Contact Us</a></li>
+              <li class="language">
+                Language <span class="language-arrow"></span>
+                <ul class="languages">
+                  <li><a href="#">English</a></li>
+                  <li><a href="#">French</a></li>
+                  <li><a href="#">German</a></li>
+                  <li><a href="#">Spanish</a></li>
+                  <li><a href="#">Serbian</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div id="menu-bg" class="menu-bg"></div>
         <div class="home-text">
           <h1>
             Your clothing production
@@ -649,10 +658,18 @@
       </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> -->
+    <script src="js/glide.min.js"></script>
     <script src="js/leaflet.js"></script>
     <script src="js/products.js"></script>
     <script src="js/app.js"></script>
-    <script></script>
+    <script>
+      // NOTE HAMBURGER MENU
+      function onClickMenu() {
+        document.querySelector("#menu").classList.toggle("change");
+        document.querySelector("#nav").classList.toggle("change");
+        document.querySelector("#menu-bg").classList.toggle("change-bg");
+      }
+    </script>
   </body>
 </html>
