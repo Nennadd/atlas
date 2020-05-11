@@ -352,7 +352,7 @@ body {
   display: grid;
   width: 33%;
   /* height: 80%; */
-  grid-template-columns: 350px auto;
+  grid-template-columns: 350px minmax(75px, auto);
   /* grid-template-rows: 1fr 1fr; */
   justify-content: center;
   column-gap: 3px;
