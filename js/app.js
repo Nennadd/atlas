@@ -312,6 +312,7 @@ function renderGallery(image) {
 
       let current = document.createElement("div");
       let currentImg = document.createElement("img");
+      currentImg.className = "current";
       currentImg.setAttribute("src", product.images[0]);
       currentImg.setAttribute("alt", product.description);
 
@@ -322,18 +323,24 @@ function renderGallery(image) {
 
       let thumbnails = document.createElement("div");
       for (let i = 0; i < product.images.length; i++) {
-        thumbnails.innerHTML += `<div><img src="${product.images[i]}" alt="${product.description}" width="67.9"></div>`;
-        // product.images[i].addEventListener("click", () => {
-        //   currentImg.setAttribute("src", product.images[i]);
-        //   currentImg.setAttribute("alt", product.description);
-        // });
+        thumbnails.innerHTML += `<div><img class="thumb" src="${product.images[i]}" alt="${product.description}" width="67.9"></div>`;
       }
+
       gallery.appendChild(current);
       gallery.appendChild(thumbnails);
       portfolioModal.appendChild(description);
       portfolioModal.appendChild(gallery);
-      // console.log(product.images[2]);
-      // console.log(image);
+
+      const thumbs = document.querySelectorAll(".thumb");
+      console.log(thumbs[0].getAttribute("src"));
+      thumbs.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          let src = thumb.getAttribute("src");
+          currentImg.setAttribute("src", src);
+          currentImg.className = "";
+          currentImg.className = "current";
+        });
+      });
     }
   }
 }
