@@ -907,6 +907,14 @@ body {
 }
 
 @media screen and (max-width: 560px) {
+  .about-text h2 {
+    margin: 2rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
   .contact {
     display: flex;
     flex-direction: column-reverse;
