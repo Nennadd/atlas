@@ -322,6 +322,7 @@ function renderGallery(image) {
       // current.appendChild(description);
 
       let thumbnails = document.createElement("div");
+      thumbnails.className = "thumbs";
       for (let i = 0; i < product.images.length; i++) {
         thumbnails.innerHTML += `<div><img class="thumb" src="${product.images[i]}" alt="${product.description}" width="67.9"></div>`;
       }

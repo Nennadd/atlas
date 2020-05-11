@@ -337,7 +337,6 @@ body {
   font-weight: 700;
 }
 .card {
-  /* width: 330px !important; */
   overflow: hidden;
 }
 .card img {
@@ -351,14 +350,11 @@ body {
 .gallery {
   display: grid;
   width: 33%;
-  /* height: 80%; */
   grid-template-columns: 350px minmax(75px, auto);
-  /* grid-template-rows: 1fr 1fr; */
   justify-content: center;
   column-gap: 3px;
   margin: 0 auto;
   z-index: 1004;
-  /* background: rgba(255, 255, 255, 0.1); */
 }
 .gallery img {
   max-width: 100%;
@@ -368,7 +364,6 @@ body {
   cursor: pointer;
 }
 .current {
-  /* opacity: 1; */
   animation: current 0.5s ease;
 }
 @keyframes current {
@@ -685,11 +680,32 @@ body {
   .home-text {
     width: 80%;
   }
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+  .about-img {
+    margin-top: 5rem;
+  }
+  .about-text {
+    padding: 2rem;
+    text-align: center;
+  }
+  .about-text h2 {
+    margin: 2rem 0;
+    position: absolute;
+    top: 0;
+    left: 43%;
+  }
   .apply-modal {
     overflow: scroll;
   }
   .apply-form {
     width: 70%;
+  }
+  .services-items {
+    grid-template-columns: repeat(2, 1fr);
   }
   .clients-arrow-left {
     left: -20px !important;
@@ -710,9 +726,6 @@ body {
     align-items: center;
   }
   /* NOTE HAMBURGER MENU */
-  /* #menu-bar {
-    display: block;
-  } */
   #menu {
     width: 35px;
     height: 30px;
@@ -851,5 +864,64 @@ body {
   }
   .languages li a:hover {
     font-weight: 700;
+  }
+  .gallery {
+    display: grid;
+    width: 33%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    column-gap: 3px;
+    margin: 0 auto;
+    z-index: 1004;
+  }
+  .thumbs {
+    display: flex;
+    gap: 3px;
+  }
+  .gallery img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    border-top: 2px solid #555;
+  }
+  .contact-form {
+    position: static;
+    width: 70%;
+    align-self: center;
+    text-align: center;
+  }
+  .contact-form h3 {
+    font-size: 1.5rem;
+  }
+  #mapid {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .contact {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    border-top: 2px solid #555;
+    border-width: 80%;
+  }
+  .contact-form {
+    position: static;
+    width: 80%;
+    align-self: center;
+    text-align: center;
+  }
+  .contact-form h3 {
+    font-size: 1.5rem;
+  }
+  #mapid {
+    height: 300px;
   }
 }
