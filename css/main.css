@@ -971,6 +971,7 @@ body {
   .thumbs {
     display: flex;
     gap: 3px;
+    margin: 0 1px;
   }
   .contact {
     display: flex;
