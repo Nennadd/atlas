@@ -1004,7 +1004,7 @@ body {
   .home {
     background-image: url("../images/background2.jpg");
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
   }
   .about-text h2 {
     margin: 2rem 0;
@@ -1060,7 +1060,7 @@ body {
   .home {
     background-image: url("../images/background2.jpg");
     justify-content: center;
-    align-items: start;
+    align-items: flex-end;
   }
   .portfolio-modal {
     padding-top: 2rem;
