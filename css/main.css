@@ -958,9 +958,6 @@ body {
     width: 100%;
     text-align: center;
   }
-  .portfolio-modal {
-    padding-top: 2rem;
-  }
   .gallery {
     display: grid;
     width: 60%;
@@ -999,5 +996,11 @@ body {
   }
   .tos a {
     margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .portfolio-modal {
+    padding-top: 2rem;
   }
 }
