@@ -884,17 +884,16 @@ body {
   .gallery {
     display: grid;
     width: 33%;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 350px minmax(75px, auto);
     justify-content: center;
     column-gap: 3px;
     margin: 0 auto;
     z-index: 1004;
   }
-  .thumbs {
+  /* .thumbs {
     display: flex;
     gap: 3px;
-  }
+  } */
   .gallery img {
     max-width: 100%;
     height: auto;
@@ -958,6 +957,23 @@ body {
     left: 0;
     width: 100%;
     text-align: center;
+  }
+  .portfolio-modal {
+    padding-top: 2rem;
+  }
+  .gallery {
+    display: grid;
+    width: 60%;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3px;
+    margin: 0 auto;
+    z-index: 1004;
+  }
+  .thumbs {
+    display: flex;
+    gap: 3px;
   }
   .contact {
     display: flex;
