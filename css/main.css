@@ -1052,6 +1052,11 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+  .home {
+    background-image: url("../images/background2.jpg");
+    justify-content: center;
+    align-items: end;
+  }
   .portfolio-modal {
     padding-top: 2rem;
   }
