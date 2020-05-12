@@ -16,6 +16,7 @@ body {
   height: 100vh;
   background-image: url("../images/background.jpg");
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,16 +34,57 @@ body {
   padding: 2rem;
   letter-spacing: 3px;
   word-spacing: 10px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
+  /* animation: text 2s ease; */
+}
+.head-span {
+  display: inline-block;
+  animation: head 2s ease;
+}
+.heading-span {
+  display: inline-block;
+  font-weight: 700;
+  margin: 10px 0;
+  animation: heading 2s ease;
+}
+.home-text p {
+  animation: paragraph 1s ease;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+@keyframes head {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes heading {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes paragraph {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .home-text h1 {
   font-weight: 400;
   margin: 0;
-}
-.heading-span {
-  display: block;
-  font-weight: 700;
-  margin: 10px 0;
 }
 .home-text p {
   margin: 0;
@@ -686,10 +728,13 @@ body {
     display: none;
   } */
   .home {
-    background-size: content;
+    background-size: cover;
+    background-position: center;
   }
   .home-text {
     width: 80%;
+    letter-spacing: 1px;
+    word-spacing: 5px;
   }
   .about {
     display: grid;
@@ -950,6 +995,11 @@ body {
 }
 
 @media screen and (max-width: 560px) {
+  .home {
+    background-image: url("../images/background2.jpg");
+    justify-content: center;
+    align-items: end;
+  }
   .about-text h2 {
     margin: 2rem 0;
     position: absolute;
@@ -996,7 +1046,7 @@ body {
     flex-direction: column;
   }
   .tos a {
-    margin-left: -30px;
+    /* margin-left: -30px; */
   }
 }
 
