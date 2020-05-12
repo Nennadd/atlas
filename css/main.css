@@ -1061,6 +1061,7 @@ body {
     background-image: url("../images/background2.jpg");
     justify-content: center;
     align-items: flex-end;
+    height: 80vh;
   }
   .portfolio-modal {
     padding-top: 2rem;
