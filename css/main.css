@@ -451,16 +451,17 @@ body {
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 2rem 2rem 2rem 3rem;
+  padding: 2rem 3rem;
   background: #eee;
 }
 .social {
   display: grid;
   justify-content: center;
   align-items: center;
+  /* background: pink; */
 }
 .foot1 {
-  width: 70%;
+  /* width: 70%; */
 }
 .foot1 p {
   padding: 0 0.7rem;
@@ -517,6 +518,13 @@ body {
   font-size: 0.92rem;
   padding-left: 7px;
 }
+.tos {
+  margin-top: 20px;
+}
+.tos a {
+  display: block;
+  margin: 5px 0;
+}
 
 @media screen and (min-width: 1600px) {
   .about-text p {
@@ -552,6 +560,9 @@ body {
 @media screen and (max-width: 1199px) {
   .apply-form {
     width: 50%;
+  }
+  .footer {
+    grid-template-columns: 1fr 1fr auto;
   }
 }
 @media screen and (min-width: 961px) {
@@ -699,6 +710,9 @@ body {
     left: 0;
     width: 100%;
     text-align: center;
+  }
+  .about-text p {
+    margin: 1rem;
   }
   .apply-modal {
     overflow: scroll;
@@ -904,6 +918,36 @@ body {
   #mapid {
     height: 400px;
   }
+  .contact-info {
+    display: flex;
+    flex-direction: row;
+    /* margin: 2rem 0 0 0; */
+    padding: 0;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .footer {
+    padding: 1rem 0;
+    margin: 0;
+  }
+  .foot1 {
+    width: 50%;
+    text-align: center;
+  }
+  .social {
+    margin: 2rem 0;
+  }
+  .contact-item {
+    /* margin: 0 4rem; */
+    padding: 0;
+  }
+  .contact-item:nth-child(2) {
+    margin-left: -3px;
+  }
+  .contact-item:nth-child(3) {
+    margin-left: -5px;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -933,5 +977,11 @@ body {
   }
   #mapid {
     height: 300px;
+  }
+  .contact-info {
+    flex-direction: column;
+  }
+  .tos a {
+    margin-left: -30px;
   }
 }
