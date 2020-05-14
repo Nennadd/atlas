@@ -102,14 +102,14 @@ const removeDropdown = document
 const applyBtn = document.querySelector(".apply-btn");
 applyBtn.addEventListener("click", formModal);
 
+const modal = document.querySelector(".apply");
 function formModal() {
   modal.classList = "apply-modal";
-  // navbar.style.display = "none";
+  document.querySelector("body").style.overflow = "hidden";
 }
-const modal = document.querySelector(".apply");
 modal.addEventListener("click", function () {
   modal.className = "apply";
-  // navbar.style.display = "flex";
+  document.querySelector("body").style.overflow = "";
 });
 const modalForm = document.querySelector(".apply-form");
 modalForm.addEventListener("click", function (e) {
@@ -226,14 +226,15 @@ function validateMessage(message) {
   }
 }
 //  ***************** NOTE Slider for OUR CLIENTS section ***********
+
 function clientsSlider() {
   let slidePerView;
-
-  if (window.innerWidth < 860) slidePerView = 1;
-  if (window.innerWidth > 861 && window.innerWidth < 1199) slidePerView = 2;
   if (window.innerWidth > 1200) slidePerView = 3;
+  else if (window.innerWidth > 861 && window.innerWidth < 1199)
+    slidePerView = 2;
+  else if (window.innerWidth < 860) slidePerView = 1;
 
-  var glide = new Glide(".glide", {
+  let glide = new Glide(".glide", {
     type: "carousel",
     startAt: 0,
     perView: slidePerView,
@@ -243,43 +244,14 @@ function clientsSlider() {
   });
   glide.mount();
 }
+
 clientsSlider();
 // ***************** NOTE PRODUCT GALLERY **********************
-// const portfolioModal = document.querySelector(".portfolio-modal");
-// const portfolioCards = document.querySelectorAll(".card");
-// const gallery = document.querySelector(".gallery");
-// portfolioCards.forEach((card) => {
-//   card.addEventListener("click", function () {
-//     portfolioModal.style.display = "block";
-//     navbar.style.display = "none";
-//     gallery.style.display = "grid";
-
-// let current = document.querySelector(".current");
-// let img = current.children[0];
-// img.setAttribute(
-//   "src",
-//   "images/products/portfolio/Skirt_Caroll_Quitterie/KB05105F-02-jupe-femme-gris-moyen-quitterie.jpg"
-// );
-//   });
-// });
-
-// CLOSE MODAL
-// portfolioModal.addEventListener("click", function () {
-//   this.style.display = "none";
-//   navbar.style.display = "flex";
-// });
-// // STOP PROPAGATION
-// gallery.addEventListener("click", function (e) {
-//   e.stopPropagation();
-// });
-
 function portfolioSlider() {
   let slidesPerView;
-
-  if (window.innerWidth < 499) slidesPerView = 1;
-  // if (window.innerWidth > 861 && window.innerWidth < 1199) slidesPerView = 2;
-  if (window.innerWidth > 500 && window.innerWidth < 899) slidesPerView = 2;
   if (window.innerWidth > 900) slidesPerView = 3;
+  if (window.innerWidth > 500 && window.innerWidth < 899) slidesPerView = 2;
+  if (window.innerWidth < 499) slidesPerView = 1;
 
   var portfolio = new Glide(".portfolio-glide", {
     type: "slider",
@@ -292,16 +264,17 @@ function portfolioSlider() {
   portfolio.mount();
 }
 portfolioSlider();
-window.addEventListener("resize", () => {
-  portfolioSlider();
-  // clientsSlider();
-});
+window.addEventListener("resize", portfolioSlider);
+// window.addEventListener("resize", function () {
+//   clientsSlider();
+// });
 
 const portfolioModal = document.querySelector(".portfolio-modal");
 const portfolioCards = document.querySelectorAll(".card");
 
 function renderGallery(image) {
   portfolioModal.innerHTML = "";
+  document.querySelector("body").style.overflow = "hidden";
   for (product of products) {
     if (image === product.images[0]) {
       let gallery = document.createElement("div");
@@ -319,7 +292,6 @@ function renderGallery(image) {
       let description = document.createElement("p");
       description.textContent = product.description;
       current.appendChild(currentImg);
-      // current.appendChild(description);
 
       let thumbnails = document.createElement("div");
       thumbnails.className = "thumbs";
@@ -333,7 +305,6 @@ function renderGallery(image) {
       portfolioModal.appendChild(gallery);
 
       const thumbs = document.querySelectorAll(".thumb");
-      console.log(thumbs[0].getAttribute("src"));
       thumbs.forEach((thumb) => {
         thumb.addEventListener("click", () => {
           let src = thumb.getAttribute("src");
@@ -350,7 +321,6 @@ portfolioCards.forEach((card) => {
   card.addEventListener("click", function (e) {
     const imgSrc = e.target.getAttribute("src");
     portfolioModal.style.display = "block";
-    // navbar.style.display = "none";
     renderGallery(imgSrc);
   });
 });
@@ -358,7 +328,7 @@ portfolioCards.forEach((card) => {
 // CLOSE MODAL
 portfolioModal.addEventListener("click", function () {
   this.style.display = "none";
-  // navbar.style.display = "flex";
+  document.querySelector("body").style.overflow = "";
 });
 // ***************** NOTE CONTACT FORM **************************
 const button = document.querySelector(".submit-btn");

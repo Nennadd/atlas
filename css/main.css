@@ -300,13 +300,10 @@ body {
   text-transform: uppercase;
   font-weight: 700;
 }
-/* .portfolio-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(180px, 1fr));
-  column-gap: 2rem;
-  width: 67%;
-  margin: 40px auto 0;
-} */
+.img-box {
+  height: auto;
+  overflow: hidden;
+}
 .card {
   overflow: hidden;
   opacity: 0;
@@ -1029,6 +1026,9 @@ body {
     gap: 3px;
     margin: 0 1px;
   }
+  .thumb {
+    margin: 0 2px;
+  }
   .contact {
     display: flex;
     flex-direction: column-reverse;
@@ -1061,7 +1061,7 @@ body {
     background-image: url("../images/background2.jpg");
     justify-content: center;
     align-items: flex-end;
-    height: 80vh;
+    height: 90vh;
   }
   .portfolio-modal {
     padding-top: 2rem;
