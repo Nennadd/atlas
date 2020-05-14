@@ -403,6 +403,7 @@ body {
 }
 .thumb {
   cursor: pointer;
+  display: inline-block;
 }
 .current {
   animation: current 0.5s ease;
@@ -1024,12 +1025,16 @@ body {
   }
   .thumbs {
     display: flex;
-    justify-content: center;
-    gap: 3px;
-    margin: 0 1px;
+    padding-right: 3px;
+    column-gap: 3px;
+    justify-content: space-between;
+    margin: 0 auto;
   }
   .thumb {
+    display: block;
     margin: 0 2px;
+    align-self: center;
+    justify-self: center;
   }
   .contact {
     display: flex;
