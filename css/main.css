@@ -1023,6 +1023,7 @@ body {
   }
   .thumbs {
     display: flex;
+    justify-content: center;
     gap: 3px;
     margin: 0 1px;
   }
@@ -1065,5 +1066,8 @@ body {
   }
   .portfolio-modal {
     padding-top: 2rem;
+  }
+  .thumb {
+    margin: 0 2px;
   }
 }
