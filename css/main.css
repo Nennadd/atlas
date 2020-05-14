@@ -370,6 +370,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.95);
   z-index: 1003;
+  overflow: scroll;
 }
 .portfolio-modal p {
   color: #fff;
