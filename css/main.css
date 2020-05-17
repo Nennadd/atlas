@@ -591,6 +591,12 @@ body {
   .services-item img {
     max-width: 150px;
   }
+  .portfolio-modal {
+    padding-top: 3rem;
+  }
+  .gallery {
+    width: 40%;
+  }
   .clients {
     padding: 3rem 1rem;
   }
