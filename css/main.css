@@ -279,6 +279,10 @@ body {
   margin: 30px auto;
   text-align: center;
 }
+.clients-img {
+  width: 100%;
+  max-width: 200px;
+}
 .glide__slide1 {
   background: rgba(0, 0, 0, 0.1);
   padding: 2rem;
